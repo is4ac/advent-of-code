@@ -1,13 +1,13 @@
 function isSafe(report) {
   let isIncreasing = report[0] < report[1];
-  
+
   for (let i = 0; i < report.length - 1; i++) {
     if (isIncreasing) {
       if (report[i] >= report[i + 1]) {
         return false;
       }
 
-      if ((report[i + 1] - report[i]) > 3) {
+      if (report[i + 1] - report[i] > 3) {
         return false;
       }
     } else {
@@ -15,7 +15,7 @@ function isSafe(report) {
         return false;
       }
 
-      if ((report[i] - report[i + 1]) > 3) {
+      if (report[i] - report[i + 1] > 3) {
         return false;
       }
     }
@@ -24,7 +24,7 @@ function isSafe(report) {
   return true;
 }
 
-function isSafeWithDampener(report) {  
+function isSafeWithDampener(report) {
   for (let i = 0; i < report.length; i++) {
     const reportDup = [...report];
     reportDup.splice(i, 1);
@@ -84,7 +84,7 @@ function solveDay2(data) {
 }
 
 fetch('/2024/day2/input.txt')
-  .then(response => response.text())
+  .then((response) => response.text())
   .then((data) => {
     solveDay2(data);
   });

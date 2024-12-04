@@ -41,7 +41,7 @@ function solveDay(data) {
 
   let sum2 = 0;
 
-  const parsed = data.split("don't()")
+  const parsed = data.split("don't()");
   sum2 += getAllMuls(parsed[0]);
 
   for (let i = 1; i < parsed.length; i++) {
@@ -49,7 +49,7 @@ function solveDay(data) {
     dos.splice(0, 1);
     dos.forEach((d) => {
       sum2 += getAllMuls(d);
-    })
+    });
   }
 
   part1.innerText = sum1;
@@ -57,7 +57,7 @@ function solveDay(data) {
 }
 
 fetch('/2024/day3/input.txt')
-  .then(response => response.text())
+  .then((response) => response.text())
   .then((data) => {
     solveDay(data);
   });

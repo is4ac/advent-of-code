@@ -31,7 +31,7 @@ function solveDay1(data) {
   let sum = 0;
   col1.forEach((n, i) => {
     sum += Math.abs(parseInt(n) - parseInt(col2[i]));
-  })
+  });
 
   part1.innerText = sum;
 
@@ -55,8 +55,7 @@ function solveDay1(data) {
 }
 
 fetch('/2024/day1/input.txt')
-  .then(response => response.text())
+  .then((response) => response.text())
   .then((data) => {
     solveDay1(data);
   });
-
